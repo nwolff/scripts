@@ -32,7 +32,7 @@ def transform(src: pd.DataFrame) -> pd.DataFrame:
     res["cohort2"] = src["ElevesCursusActif::classe"].map(prefix_year)
 
     courses_list = src["ElevesCursusActif::xenclassDiscr"].map(prefixed_courses_list)
-    max_number_of_courses = courses_list.map(len).aggregate(max)
+    max_number_of_courses = courses_list.map(len).max()
     if max_number_of_courses > 4:
         sys.exit(f"max number of courses is 4, we got {max_number_of_courses}")
 
