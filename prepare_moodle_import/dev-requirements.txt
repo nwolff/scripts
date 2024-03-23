@@ -4,3 +4,4 @@ black
 isort
 ruff
 mypy
+pandas-stubs
